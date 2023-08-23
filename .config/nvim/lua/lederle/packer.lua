@@ -44,9 +44,9 @@ return require('packer').startup(function(use)
 		  {'neovim/nvim-lspconfig'},             -- Required
 		  {                                      -- Optional
 		  'williamboman/mason.nvim',
-		  run = function()
-			  pcall(vim.cmd, 'MasonUpdate')
-		  end,
+		  --run = function()
+		--	  pcall(vim.cmd, 'MasonUpdate')
+	--	  end,
 	  },
 	  {'williamboman/mason-lspconfig.nvim'}, -- Optional
 
@@ -56,13 +56,5 @@ return require('packer').startup(function(use)
 	  {'L3MON4D3/LuaSnip'},     -- Required
   }
 }
-
-
-use({
-	"iamcco/markdown-preview.nvim",
-	run = "cd app && npm install",
-	setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
-	ft = { "markdown" },
-})
 
   end)
